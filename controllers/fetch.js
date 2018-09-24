@@ -1,11 +1,12 @@
 // Controller for our scraper
 // ============================
 var db = require("../models");
-var scrape = require("../scripts/scrape");
+var getPosts = require("../scripts/scrape");
+
 
 module.exports = {
   scrapeArticle: function(req, res) {
-    return scrape()
+    return getPosts()
       .then(function(articles) {
         // then insert articles into the db
         return db.Article.create(articles);

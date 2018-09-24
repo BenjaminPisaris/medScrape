@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(document).on("click", ".btn.save", handleArticleSave);
   $(document).on("click", ".scrape-new", handleArticleScrape);
   $(".clear").on("click", handleArticleClear);
-
+  
   function initPage() {
     // Run an AJAX request for any unsaved headlines
     $.get("/api/headlines?saved=false").then(function(data) {
@@ -45,7 +45,7 @@ $(document).ready(function() {
       $("<h3>").append(
         $("<a class='article-link' target='_blank' rel='noopener noreferrer'>")
           .attr("href", article.url)
-          .text(article.headline),
+          .text(article.title),
         $("<a class='btn btn-success save'>Save Article</a>")
       )
     );

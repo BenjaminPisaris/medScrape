@@ -2,9 +2,11 @@ var request = require('request');
 var cheerio = require('cheerio');
 var Promise = require('promise');
 
+
 //Get medium variable from search bar
 
-function getPosts(medium) {
+module.exports = function getPosts(medium) {
+
   return new Promise(function (resolve, reject) {
     request(`https://medium.com/${medium.user}/latest`, function (error, response, html) {
       if (error) reject(error);
@@ -28,4 +30,3 @@ function getPosts(medium) {
   });
 }
 
-module.exports = {getPosts};
