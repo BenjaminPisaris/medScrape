@@ -13,7 +13,7 @@ module.exports = {
       .then(function(dbArticle) {
         if (dbArticle.length === 0) {
           res.json({
-            message: "No new articles today. Check back tomorrow!"
+            message: "No new articles"
           });
         }
         else {
@@ -26,7 +26,7 @@ module.exports = {
       .catch(function(err) {
         
         res.json({
-          message: "Scrape complete!!"
+          message: "Scrape finished"
         });
       });
   }
