@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(logger("dev"));
 app.use(routes);
 //connect to MongoDB
-mongoose.connect("mongodb://localhost/dbArticles")
+mongoose.connect("mongodb://localhost/dbArticles", { useNewUrlParser: true })
 
 
 // Listen on the port

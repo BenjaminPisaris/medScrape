@@ -115,7 +115,7 @@ $(document).ready(function() {
     var medium = document.getElementById("username").value;
     // This function handles the user clicking any "scrape new article" buttons
     $.get("/api/fetch").then(function(data) {
-      getPosts(medium);
+      //getPosts(medium);
       initPage();
       bootbox.alert($("<h3 class='text-center m-top-80'>").text(data.message));
     });
