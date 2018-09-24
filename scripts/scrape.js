@@ -8,7 +8,7 @@ var Promise = require('promise');
 module.exports = function getPosts(medium) {
 
   return new Promise(function (resolve, reject) {
-    request(`https://medium.com/${medium.user}/latest`, function (error, response, html) {
+    request(`https://medium.com/@${medium}/latest`, function (error, response, html) {
       if (error) reject(error);
       if (!error && response.statusCode == 200) {
         var $ = cheerio.load(html);
